@@ -1,9 +1,18 @@
 import React from "react";
 
 const names = [
-  { name: "Ali", age: 25 },
-  { name: "Ayşe", age: 22 },
-  { name: "Mehmet", age: 30 },
+  {
+    name: "Toto, I've a feeling we're not in Kansas anymore.",
+    age: " The Wizard of Oz (1939)",
+  },
+  {
+    name: "May the Force be with you.",
+    age: "Star Wars (1977)",
+  },
+  {
+    name: "Houston, we have a problem.",
+    age: "Apollo 13 (1995)",
+  },
 ];
 
 function MyComponent() {
@@ -14,7 +23,7 @@ function MyComponent() {
     <div>
       {/* randomPerson objesini gösterin */}
       <p>
-        <b>Name:</b> {randomPerson.name} <b>Age:</b> {randomPerson.age}
+        {randomPerson.name} {randomPerson.age}
       </p>
     </div>
   );
