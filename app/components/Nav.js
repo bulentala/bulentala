@@ -6,7 +6,7 @@ const navItems = [
 ];
 const Nav = () => {
   return (
-    <nav className='flex items-center space-x-3 text-sm font-semibold'>
+    <nav className='flex items-center space-x-3  font-semibold'>
       {navItems.map((navItem, i) => {
         const { name, path } = navItem;
         return (

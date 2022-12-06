@@ -1,9 +1,9 @@
-import RandomReplic from "./RandomReplic";
+import MyComponent from "./MyComponents";
 
 const Hero = () => {
   return (
-    <div>
-      <RandomReplic />
+    <div className=' '>
+      <MyComponent />
     </div>
   );
 };

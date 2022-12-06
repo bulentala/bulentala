@@ -18,11 +18,11 @@ export default function RootLayout({ children }) {
       <body>
         <div
           id='container'
-          className='mx-auto grid min-h-screen max-w-2xl grid-rows-[auto_auto_1fr_auto]'
+          className='mx-auto grid min-h-screen max-w-2xl grid-rows-[auto_auto_1fr_auto] '
         >
           <Header />
           <Hero />
-          <main>{children}</main>
+          <main className=' '>{children}</main>
           <Footer />
         </div>
       </body>
