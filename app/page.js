@@ -1,5 +1,5 @@
 const AppIndexPage = () => {
-  return <div>AppIndexPage</div>;
+  return <></>;
 };
 
 export default AppIndexPage;
