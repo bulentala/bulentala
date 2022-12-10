@@ -16,15 +16,12 @@ const names = [
 ];
 
 function MyComponent() {
-  // names dizisinden rastgele bir eleman seçin
   const randomPerson = names[Math.floor(Math.random() * names.length)];
 
   return (
-    <div>
-      {/* randomPerson objesini gösterin */}
-      <p>
-        {randomPerson.name} {randomPerson.age}
-      </p>
+    <div className='text-sm'>
+      <p>{randomPerson.name}</p>
+      <p className='text-right text-xs italic'>{randomPerson.age}</p>
     </div>
   );
 }
