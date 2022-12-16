@@ -1,0 +1,62 @@
+next.js 13, supabase kullanarak yazdığım bu kod : " "use client";
+import { useEffect, useState } from "react";
+import supabase from "../utils/supabase";
+const AppIndexPage = () => {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await supabase.from("posts").select();
+      setPosts(data);
+    };
+
+    fetchPosts();
+  }, []);
+
+  return (
+    <div>
+     
+    </div>
+  );
+};
+
+export default AppIndexPage;
+ " bu veriyi döndürüyor : " [
+  {
+    "id": 1,
+    "created_at": "2022-12-16T18:42:49+00:00",
+    "title": "Birinci Makale BAŞLIĞI  (title)",
+    "description": "Birinci Makale  AÇIKLAMASI (description)",
+    "content": "Birinci Makale  İÇERİĞİ (content)",
+    "tag": [
+      "article",
+      " news"
+    ]
+  },
+  {
+    "id": 5,
+    "created_at": "2022-12-16T19:08:37.498189+00:00",
+    "title": "İkinci Makale BAŞLIĞI (title)",
+    "description": "İkinci Makale AÇIKLAMASI (description)",
+    "content": "İkinci Makale İçeriği (content)",
+    "tag": [
+      "news"
+    ]
+  }
+]"
+
+-----------------------------------------
+1. Prompt:  Cevaplar Türkçe dilinde olsun
+2. Prompt: title, description, tag sayfaya yazdırılsın
+3. Prompt: Sana aksi söylenene kadar açıklama yazma. Sadece kodları yaz.
+4. Prompt: Bu kodları AppIndexPage'e ekle: "  <div>
+        <input type='search' name='' placeholder='SEARCH' id='' />
+      </div>
+      <div>
+        <button>Tag Filter</button>
+      </div>
+      <div>
+        <button>Sort by :: Latest- Earliest</button>
+      </div>"
+
+
