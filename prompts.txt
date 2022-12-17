@@ -96,4 +96,16 @@ export default AppIndexPage;
  "
 12. Prompt: Bu kod bloğunu EcmaScript 6 (ES6) kurallarına göre kontrol et.
 
-13. <button>Sort by :: Earliest / Sort by :: Latest</button> butonuna birinci kez tıklandığında, created_at verisi referans alınarak sayfaya yazdırılanlar yeni tarihten eski tarihe, butona ikinci kez tıklandığında yeni tarihten eski tarihe göre sıralansın.
+13. Prompt: <button>Sort by :: Earliest / Sort by :: Latest</button> butonuna birinci kez tıklandığında, created_at verisi referans alınarak sayfaya yazdırılanlar yeni tarihten eski tarihe, butona ikinci kez tıklandığında yeni tarihten eski tarihe göre sıralansın.
+14. Prompt: Sayafnın en başına "Serach" input alanı ekleyelim.
+15. Prompt: Serach inputuna veri girişi yapıldığında girilen veri title, description,content alanlarında aransın ve ekranda sadece eşeleşenler yazdırılsın
+
+
+
+const { data, error } = await supabase
+  .from("books")
+  .select()
+  .textSearch("title", "navy shirt", {
+    type: "websearch",
+    config: "english",
+  });
