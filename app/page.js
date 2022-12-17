@@ -1,51 +1,38 @@
 "use client";
 import { useEffect, useState } from "react";
-import supabase from "../utils/supabase";
+import supabase from "./utils/supabase";
+
 const AppIndexPage = () => {
   const [posts, setPosts] = useState([]);
-  const [selectedTag, setSelectedTag] = useState(null);
+  const [sortBy, setSortBy] = useState("earliest");
 
   useEffect(() => {
     const fetchPosts = async () => {
       let query = supabase.from("posts");
-      if (selectedTag) {
-        query = query.where({ tag: selectedTag });
+      if (sortBy === "latest") {
+        query = query.order("created_at desc");
+      } else {
+        query = query.order("created_at asc");
       }
       const { data } = await query.select();
       setPosts(data);
     };
-
     fetchPosts();
-  }, [selectedTag]);
-
-  const handleTagFilter = () => {
-    setSelectedTag(prompt("Enter tag to filter by:"));
-  };
+  }, [setPosts, sortBy]);
 
   return (
-    <div>
-      <div>
-        <input type='search' name='' placeholder='SEARCH' id='' />
-      </div>
-      <div>
-        <button onClick={handleTagFilter}>Tag Filter</button>
-      </div>
-      <div>
-        <button>Sort by :: Latest- Earliest</button>
-      </div>
+    <>
+      <button onClick={() => setSortBy("earliest")}>Sort by :: Earliest</button>
+      <button onClick={() => setSortBy("latest")}>Sort by :: Latest</button>
       {posts.map((post) => (
         <div key={post.id}>
-          <h2>{post.title}</h2>
+          <h3>{post.title}</h3>
           <p>{post.description}</p>
-          <div>
-            {post.tag.map((tag) => (
-              <span key={tag}>{tag}</span>
-            ))}
-          </div>
+          <p>{post.created_at}</p>
+          <p>{post.tag.join(", ")}</p>
         </div>
       ))}
-    </div>
+    </>
   );
 };
-
 export default AppIndexPage;

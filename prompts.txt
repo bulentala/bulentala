@@ -1,27 +1,43 @@
-next.js 13, supabase kullanarak yazdığım bu kod : " "use client";
-import { useEffect, useState } from "react";
-import supabase from "../utils/supabase";
-const AppIndexPage = () => {
-  const [posts, setPosts] = useState([]);
+-----------------------------------------
+1. Prompt:  Ben sorularımı Türkçe olarak soracağım. Cevaplar Türkçe dilinde olsun
+2. Prompt: Sorularım Next.js, JavaScript, React, Supabase hakkında olacak
+3. Prompt: Soruları cevaplarken uzun açıklamalar yapmana gerek yok. Ben sadece örnek kod blokları oluşturmanı istiyorum.
+4. Prompt :Next.js nin 13. versiyonu hakkında sorularım olacak
+5. Prompt: Next.js ile oluşturduğum bir projem var. Bu projenin "pages" dizinini kullanmayacağım. Bunun yerine "app" dizinini kullanacağım
+6. Prompt: projemin yapısı şu şekilde görünüyor 
+my-project/
+├── .next/
+├── node_modules/
+├── app
+    ├── page.js
+    └── utils
+        └── supabase.js
 
+7. Prompt: /utils/supabase.js sayfasında bu kod bloğu bulunmaktadır.
+import { createClient } from "@supabase/supabase-js";
+export default createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL,
+  process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY
+);
+8. Prompt: /app/page.js içerisinde bu kod bloğunu kullanacağım.
+"use client";
+import { useEffect, useState } from "react";
+import supabase from "./utils/supabase";
+const AppIndexPage = () => {
+ const [posts, setPosts] = useState([]);
   useEffect(() => {
     const fetchPosts = async () => {
       const { data } = await supabase.from("posts").select();
       setPosts(data);
     };
-
     fetchPosts();
-  }, []);
+  }, [setPosts]);
 
-  return (
-    <div>
-     
-    </div>
-  );
+  return <pre>{JSON.stringify(posts, null, 2)}</pre>;
 };
-
 export default AppIndexPage;
- " bu veriyi döndürüyor : " [
+9. Prompt: Sayfamda bu metin yazdırılıyor.
+[
   {
     "id": 1,
     "created_at": "2022-12-16T18:42:49+00:00",
@@ -43,20 +59,41 @@ export default AppIndexPage;
       "news"
     ]
   }
-]"
+]
+10. Prompt: created_at, title, description, tag verilerini ekrana yazdıralım
+11. Prompt: Bu kod düzgün çalışıyor: 
+" "use client";
+import { useEffect, useState } from "react";
+import supabase from "./utils/supabase";
 
------------------------------------------
-1. Prompt:  Cevaplar Türkçe dilinde olsun
-2. Prompt: title, description, tag sayfaya yazdırılsın
-3. Prompt: Sana aksi söylenene kadar açıklama yazma. Sadece kodları yaz.
-4. Prompt: Bu kodları AppIndexPage'e ekle: "  <div>
-        <input type='search' name='' placeholder='SEARCH' id='' />
-      </div>
-      <div>
-        <button>Tag Filter</button>
-      </div>
-      <div>
-        <button>Sort by :: Latest- Earliest</button>
-      </div>"
+const AppIndexPage = () => {
+  const [posts, setPosts] = useState([]);
 
+  useEffect(() => {
+    const fetchPosts = async () => {
+      const { data } = await supabase.from("posts").select();
+      setPosts(data);
+    };
+    fetchPosts();
+  }, [setPosts]);
 
+  return (
+    <>
+      <button>Sort by :: Earliest / Sort by :: Latest</button>
+      {posts.map((post) => (
+        <div key={post.id}>
+          <h2>{post.title}</h2>
+          <p>{post.description}</p>
+          <p>{post.created_at}</p>
+          <p>{post.tag.join(", ")}</p>
+        </div>
+      ))}
+    </>
+  );
+};
+
+export default AppIndexPage;
+ "
+12. Prompt: Bu kod bloğunu EcmaScript 6 (ES6) kurallarına göre kontrol et.
+
+13. <button>Sort by :: Earliest / Sort by :: Latest</button> butonuna birinci kez tıklandığında, created_at verisi referans alınarak sayfaya yazdırılanlar yeni tarihten eski tarihe, butona ikinci kez tıklandığında yeni tarihten eski tarihe göre sıralansın.
