@@ -1,5 +1,5 @@
 import Link from "next/link";
-
+import { Button } from "@/components/ui/button";
 const data = [
   {
     id: 1,
@@ -14,13 +14,15 @@ const data = [
 ];
 const HomePage = () => {
   return (
-    <div className='pb-6 pt-3'>
-      {data.map((item) => (
-        <div key={item.id} className='truncate pt-3'>
-          <Link href={item.url}>{item.title}</Link>
-        </div>
-      ))}
-    </div>
+    <>
+      <div className='pb-6 pt-3'>
+        {data.map((item) => (
+          <div key={item.id} className='truncate pt-3'>
+            <Link href={item.url}>{item.title}</Link>
+          </div>
+        ))}
+      </div>
+    </>
   );
 };
 
