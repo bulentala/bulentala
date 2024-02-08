@@ -1,5 +1,6 @@
+import CommandMenu from "@/components/CommandMenu";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+
 const data = [
   {
     id: 1,
@@ -22,6 +23,7 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+      <CommandMenu />
     </>
   );
 };
