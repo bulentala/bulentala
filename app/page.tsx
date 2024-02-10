@@ -1,4 +1,3 @@
-import CommandMenu from "@/components/CommandMenu";
 import Link from "next/link";
 
 const data = [
@@ -23,7 +22,6 @@ const HomePage = () => {
           </div>
         ))}
       </div>
-      <CommandMenu />
     </>
   );
 };

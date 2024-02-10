@@ -2,9 +2,7 @@
 
 import * as React from "react";
 import { useRouter } from "next/navigation";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-
+import { MenuIcon } from "./Icons";
 import {
   CommandDialog,
   CommandEmpty,
@@ -50,66 +48,29 @@ const CommandMenu = () => {
     <>
       <div onClick={() => setOpen(true)}>
         <kbd>
-          {" "}
-          <svg
-            stroke-width='1.5'
-            viewBox='0 0 24 24'
-            fill='none'
-            xmlns='http://www.w3.org/2000/svg'
-            className='h-5 w-5'
-          >
-            <path
-              d='M3 5H11'
-              stroke='currentColor'
-              stroke-width='1.5'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            ></path>
-            <path
-              d='M3 12H16'
-              stroke='currentColor'
-              stroke-width='1.5'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            ></path>
-            <path
-              d='M3 19H21'
-              stroke='currentColor'
-              stroke-width='1.5'
-              stroke-linecap='round'
-              stroke-linejoin='round'
-            ></path>
-          </svg>
+          <MenuIcon />
         </kbd>
       </div>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder='Type a command or search...' />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
-          <CommandGroup heading='Suggestions'>
+          <CommandGroup heading='Social'>
             <CommandItem>
-              <span>Calendar</span>
+              <span>Instagram</span>
             </CommandItem>
             <CommandItem>
-              <span>Search Emoji</span>
+              <span>Youtube</span>
             </CommandItem>
             <CommandItem>
-              <span>Calculator</span>
+              <span>Twitter</span>
             </CommandItem>
           </CommandGroup>
           <CommandSeparator />
-          <CommandGroup heading='Settings'>
+          <CommandGroup heading='Contact'>
             <CommandItem>
-              <span>Profile</span>
-              <CommandShortcut>⌘P</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Billing</span>
-              <CommandShortcut>⌘B</CommandShortcut>
-            </CommandItem>
-            <CommandItem>
-              <span>Settings</span>
-              <CommandShortcut>⌘S</CommandShortcut>
+              <span>Mail</span>
+              <CommandShortcut>⌘C</CommandShortcut>
             </CommandItem>
           </CommandGroup>
         </CommandList>
