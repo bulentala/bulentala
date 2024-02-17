@@ -4,6 +4,7 @@ import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 export const metadata: Metadata = {
   title: "Bülent ALA",
@@ -22,6 +23,7 @@ export default function RootLayout({
         <main className='mx-auto max-w-3xl px-6'>{children}</main>
         <Footer />
       </body>
+      <GoogleAnalytics gaId='G-51M62S5FLH' />
     </html>
   );
 }
