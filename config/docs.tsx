@@ -7,6 +7,10 @@ interface DocsConfig {
 export const docsConfig: DocsConfig = {
   mainNav: [
     {
+      title: "Home",
+      href: "/",
+    },
+    {
       title: "Youtube",
       href: "/youtube",
     },
@@ -17,24 +21,6 @@ export const docsConfig: DocsConfig = {
     {
       title: "Instagram",
       href: "/instagram",
-    },
-    {
-      title: "Examples",
-      href: "/examples",
-    },
-    {
-      title: "Figma",
-      href: "/docs/figma",
-    },
-    {
-      title: "GitHub",
-      href: "https://github.com/shadcn/ui",
-      external: true,
-    },
-    {
-      title: "Twitter",
-      href: "https://twitter.com/shadcn",
-      external: true,
     },
   ],
 };

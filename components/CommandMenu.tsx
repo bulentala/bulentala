@@ -94,7 +94,7 @@ export function CommandMenu({ ...props }: DialogProps) {
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder='Type a command or search...' />
         <CommandList>
-          <CommandEmpty>No results found.</CommandEmpty>
+          <CommandEmpty>Opss!!!</CommandEmpty>
           <CommandGroup heading='Links'>
             {docsConfig.mainNav
               .filter((navitem) => !navitem.external)
