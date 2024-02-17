@@ -58,7 +58,12 @@ export function CommandMenu({ ...props }: DialogProps) {
 
   return (
     <>
-      <Button variant='ghost' onClick={() => setOpen(true)} {...props}>
+      <Button
+        variant='ghost'
+        onClick={() => setOpen(true)}
+        {...props}
+        aria-label='Menu'
+      >
         <kbd className=''>
           <svg
             strokeWidth='1.5'
@@ -95,7 +100,7 @@ export function CommandMenu({ ...props }: DialogProps) {
         <CommandInput placeholder='Type a command or search...' />
         <CommandList>
           <CommandEmpty>Opss!!!</CommandEmpty>
-          <CommandGroup heading='Links'>
+          <CommandGroup heading='Social'>
             {docsConfig.mainNav
               .filter((navitem) => !navitem.external)
               .map((navItem) => (
