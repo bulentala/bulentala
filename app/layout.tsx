@@ -18,7 +18,7 @@ export default function RootLayout({
     <html lang='en' className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
         <Header />
-        {children}
+        <main className='mx-auto max-w-3xl px-6'>{children}</main>
       </body>
     </html>
   );
