@@ -58,18 +58,37 @@ export function CommandMenu({ ...props }: DialogProps) {
 
   return (
     <>
-      <Button
-        variant='outline'
-        className={cn(
-          "relative h-8 w-full justify-start rounded-[0.5rem] bg-background text-sm font-normal text-muted-foreground shadow-none sm:pr-12 md:w-40 lg:w-64"
-        )}
-        onClick={() => setOpen(true)}
-        {...props}
-      >
-        <span className='hidden lg:inline-flex'>Search documentation...</span>
-        <span className='inline-flex lg:hidden'>Search...</span>
-        <kbd className='pointer-events-none absolute right-[0.3rem] top-[0.3rem] hidden h-5 select-none items-center gap-1 rounded border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex'>
-          <span className='text-xs'>⌘</span>K
+      <Button variant='ghost' onClick={() => setOpen(true)} {...props}>
+        <kbd className=''>
+          <svg
+            strokeWidth='1.5'
+            viewBox='0 0 24 24'
+            fill='none'
+            xmlns='http://www.w3.org/2000/svg'
+            className='h-5 w-5'
+          >
+            <path
+              d='M3 5H11'
+              stroke='currentColor'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+            <path
+              d='M3 12H16'
+              stroke='currentColor'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+            <path
+              d='M3 19H21'
+              stroke='currentColor'
+              strokeWidth='1.5'
+              strokeLinecap='round'
+              strokeLinejoin='round'
+            />
+          </svg>
         </kbd>
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
@@ -94,7 +113,7 @@ export function CommandMenu({ ...props }: DialogProps) {
           </CommandGroup>
           {docsConfig.sidebarNav.map((group) => (
             <CommandGroup key={group.title} heading={group.title}>
-              {group.items.map((navItem) => (
+              {group.items.map((navItem: any) => (
                 <CommandItem
                   key={navItem.href}
                   value={navItem.title}
