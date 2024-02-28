@@ -19,9 +19,7 @@ export default function RootLayout({
   return (
     <html lang='en' className={`${GeistSans.variable} ${GeistMono.variable}`}>
       <body>
-        <Header />
-        <main className='mx-auto max-w-3xl px-6'>{children}</main>
-        <Footer />
+        <main>{children}</main>
       </body>
       <GoogleAnalytics gaId='G-51M62S5FLH' />
     </html>

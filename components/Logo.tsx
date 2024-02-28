@@ -3,7 +3,7 @@ const Logo = () => {
   return (
     <>
       <Link href='/'>
-        <div className='border-2 border-gray-900 px-2 font-semibold rounded'>
+        <div className=' w-max border-2 border-gray-900 px-2 font-semibold rounded'>
           A|A
         </div>
       </Link>
