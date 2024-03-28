@@ -1,6 +1,8 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import Logo from "@/components/Logo";
 import { Button } from "@/components/ui/button";
+import Slide from "@/components/Slide";
+
 const HomePage = () => {
   return (
     <div>
@@ -55,6 +57,7 @@ const HomePage = () => {
           <Button variant='outline'>{">"}</Button>
         </div>
       </div>
+      <Slide />
     </div>
   );
 };
