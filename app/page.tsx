@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <>
@@ -20,17 +22,27 @@ export default function Home() {
           </div>
         </div>
       </div> */}
+      <div className="relative min-h-screen">
+        <div className="  absolute w-full h-full grid grid-cols-3 grid-rows-3 ">
+          <div className="col-start-2 row-span-3  border-x border-dashed border-notion-light-brown inline-grid items-center justify-items-center"></div>
+        </div>
+        <div className="absolute w-full h-full grid grid-cols-3 grid-rows-3 ">
+          <div className="border-y border-dashed row-start-2 border-notion-light-brown  inline-grid items-center justify-items-center col-span-3"></div>
+        </div>
 
-      <div className="relative test min-h-screen">
-        <div className="absolute w-full h-full test grid grid-cols-3 grid-rows-3">
-          <div className="test  row-start-2 row-span-2 inline-grid items-center justify-items-center col-span-2">
-            <div className="test col-span-full row-span-full">deneme</div>
+        <div className="z-10 absolute w-full h-full grid grid-cols-3 grid-rows-3">
+          <div className="  row-start-2 row-span-2 inline-grid items-center justify-items-center col-span-2">
+            <div className="border bg-notion-bg-light-grey border-dashed border-notion-light-brown col-span-full row-span-full rounded-md  p-3 flex flex-col items-center justify-center ">
+              <Link href="isik-ulkesine-dair" className=" text-sm font-mono">IŞIK ÜLKESI'NE DAIR</Link>
+              {/* <div className="text-sm">Bak şuraya yazıyorum</div>
+              <div className="text-sm">Gez göz hoppacık</div> */}
+            </div>
           </div>
         </div>
-        <div className="absolute w-full h-full test grid grid-cols-3 grid-rows-3">
-          <div className="test  col-span-2 row-span-2 col-start-2 inline-grid items-center justify-items-center">
-            <div className="test col-span-full row-span-full rounded-full h-16 w-16">
-              deneme
+        <div className=" absolute w-full h-full  grid grid-cols-3 grid-rows-3">
+          <div className="  col-span-2 row-span-2 col-start-2 inline-grid items-center justify-items-center">
+            <div className="z-10 text-notion-light-grey hover:rotate-45 text-sm font-mono bg-notion-bg-light-grey  border border-dashed border-notion-light-brown col-span-full row-span-full rounded-md p-2  flex items-center justify-center">
+              BÜLENT ALA
             </div>
           </div>
         </div>
