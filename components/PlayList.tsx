@@ -7,14 +7,14 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { YouTubeEmbed } from "@next/third-parties/google";
-import { Description } from "@radix-ui/react-dialog";
+
 const playList = [
   {
     id: 1,
     title: "Denizdeyim",
     artist: "Peyk",
     songId: "zPLJX-Pqgus",
-    description: "",
+    description: "İçiyoruz ağır ağır, Acele yok. Gereği yok...",
   },
   {
     id: 2,
