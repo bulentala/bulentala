@@ -12,13 +12,13 @@ const playList = [
     id: 1,
     title: "Denizdeyim",
     artist: "Peyk",
-    songId: "zPLJX-Pqgus",
+    songId: "https://via.placeholder.com/150",
   },
   {
     id: 2,
     title: "Kocaman Sıfır",
     artist: "Peyk",
-    songId: "O64W81QgYrg",
+    songId: "https://via.placeholder.com/150",
   },
   {
     id: 3,
@@ -37,7 +37,7 @@ const playList = [
 export default function PlayList() {
   return (
     <div>
-      <p className="pb-4 font-medium text-gray-500">playList</p>
+      <p className="pb-4 font-medium text-gray-500">playListXXX</p>
       <div>
         {playList.map((song) => (
           <Dialog key={song.id}>
@@ -49,17 +49,17 @@ export default function PlayList() {
               <div className="col-start-3">{song.artist}</div>
             </DialogTrigger>
             <DialogContent>
-              <DialogHeader>
-                <DialogTitle>
-                  {song.title}-{song.artist}
-                </DialogTitle>
-                <DialogDescription>sss</DialogDescription>
-              </DialogHeader>
+              <DialogTitle>
+                {song.title}-{song.artist}
+              </DialogTitle>
               <YouTubeEmbed
                 videoid={song.songId}
                 height={400}
                 params="controls=0"
               />
+              <DialogHeader>
+                <DialogDescription>sss</DialogDescription>
+              </DialogHeader>
             </DialogContent>
           </Dialog>
         ))}
