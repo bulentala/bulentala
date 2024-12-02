@@ -14,7 +14,8 @@ const playList = [
     title: "Denizdeyim",
     artist: "Peyk",
     songId: "zPLJX-Pqgus",
-    description: "İçiyoruz ağır ağır, Acele yok. Gereği yok...",
+    description:
+      "Saçların var yüzüne düşen. Saçların ki kıvır kıvır. İçiyoruz ağır ağır, Acele yok. Gereği yok...",
   },
   {
     id: 2,
