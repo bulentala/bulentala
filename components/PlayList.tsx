@@ -7,30 +7,36 @@ import {
   DialogTrigger,
 } from "@/components/ui/dialog";
 import { YouTubeEmbed } from "@next/third-parties/google";
+import { Description } from "@radix-ui/react-dialog";
 const playList = [
   {
     id: 1,
     title: "Denizdeyim",
     artist: "Peyk",
     songId: "zPLJX-Pqgus",
+    description: "",
   },
   {
     id: 2,
     title: "Kocaman Sıfır",
     artist: "Peyk",
     songId: "O64W81QgYrg",
+    description:
+      "Ve de hep bu yanlış anlamam, bok gibi zamanlamam, çuvallamam Ve gelmişiz bugüne beni çözmeye...",
   },
   {
     id: 3,
     title: "Bipolar",
     artist: "Şara Kaplan",
     songId: "I_fDIOc17NM",
+    description: "bipolarım bi geçimsizim...",
   },
   {
     id: 4,
     title: "Saraiman",
     artist: "Ladaniva",
     songId: "vGGbp88ziXU",
+    description: "datdre datdre datdre day da da...",
   },
 ];
 
@@ -53,13 +59,11 @@ export default function PlayList() {
                 <DialogTitle>
                   {song.title}-{song.artist}
                 </DialogTitle>
-                <DialogDescription>sss</DialogDescription>
+                <DialogDescription className="text-xs">
+                  {song.description}
+                </DialogDescription>
               </DialogHeader>
-              <YouTubeEmbed
-                videoid={song.songId}
-                height={400}
-                params="controls=0"
-              />
+              <YouTubeEmbed videoid={song.songId} params="controls=0" />
             </DialogContent>
           </Dialog>
         ))}
