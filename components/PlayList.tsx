@@ -39,6 +39,13 @@ const playList = [
     songId: "vGGbp88ziXU",
     description: "datdre datdre datdre day da da...",
   },
+  {
+    id: 5,
+    title: "Jungle",
+    artist: "Tash Sultana",
+    songId: "Vn8phH0k5HI",
+    description: "Ashes to ashes",
+  },
 ];
 
 export default function PlayList() {
