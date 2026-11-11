@@ -18,7 +18,7 @@ export default function MdConvertPage() {
       // Server action'ı çağır
       const result = await convertFilesToMd();
       setStatus(result.message);
-    } catch (error) {
+    } catch  {
       setStatus("İşlem sırasında beklenmedik bir hata oluştu.");
     } finally {
       setIsLoading(false);

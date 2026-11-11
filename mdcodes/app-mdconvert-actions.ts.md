@@ -16,8 +16,16 @@ const ALLOWED_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".mdx"
 // Taranmayacak, es geçilecek KÖK klasörler (Performans için çok önemli)
 const IGNORED_FOLDERS = ["node_modules", ".next", ".git", "mdcodes", "public"];
 
-// Taranmayacak, es geçilecek özel dosyalar
-const IGNORED_FILES = ["package-lock.json", "pnpm-lock.yaml", ".DS_Store", "README.md","AGENTS.md"];
+// Taranmayacak, es geçilecek özel dosyalar (Güvenlik için .env eklendi)
+const IGNORED_FILES = [
+  "package-lock.json",
+  "pnpm-lock.yaml",
+  ".DS_Store",
+  "README.md",
+  "AGENTS.md",
+  ".env",
+  ".env.local"
+];
 
 // ==========================================
 
@@ -76,8 +84,13 @@ export async function convertFilesToMd() {
       success: true,
       message: `İşlem başarılı! Toplam ${processedCount} dosya "mdcodes" klasörüne dönüştürüldü.`
     };
-  } catch (error: any) {
-    return { success: false, message: `Hata oluştu: ${error.message}` };
+  } catch (error: unknown) {
+    // 1. error'un bir Error objesi olup olmadığını kontrol ediyoruz
+    if (error instanceof Error) {
+      return { success: false, message: `Hata oluştu: ${error.message}` };
+    }
+    // 2. Eğer JS'de nadiren de olsa throw "bir string mesaj" gibi bir durum varsa yedek senaryo
+    return { success: false, message: "Bilinmeyen bir hata oluştu." };
   }
 }
 
