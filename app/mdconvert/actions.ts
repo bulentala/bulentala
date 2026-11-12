@@ -11,7 +11,7 @@ import path from "path";
 const ALLOWED_EXTENSIONS = [".ts", ".tsx", ".js", ".jsx", ".json", ".md", ".mdx", ".css"];
 
 // Taranmayacak, es geçilecek KÖK klasörler (Performans için çok önemli)
-const IGNORED_FOLDERS = ["node_modules", ".next", ".git", "mdcodes", "public"];
+const IGNORED_FOLDERS = ["node_modules", ".next", ".git", "mdcodes", "public","mdconvert"];
 
 // Taranmayacak, es geçilecek özel dosyalar (Güvenlik için .env eklendi)
 const IGNORED_FILES = [
