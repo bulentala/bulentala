@@ -10,6 +10,6 @@ This block is written and re-added by `next dev` — verify at `node_modules/nex
 
 ## Likya Araştırma ve İçerik Kuralları
 - **Kapsam Sınırı:** Araştırma oturumlarında `app/`, `public/`, `next.config.ts` veya diğer Next.js uygulama dosyalarında kesinlikle değişiklik yapma.
-- **Kaynak Hiyerarşisi:** `kaynak-md/` dizini salt okunur referans alanıdır; bu klasördeki dosyaları silme veya üzerine yazma. Tüm sentez ve makale üretimlerini `icerik/` dizini altında gerçekleştir.
-- **Atıf Zorunluluğu:** `icerik/` altına eklediğin her tarihsel veya epigrafik bilgi için `kaynak-md/` içindeki ilgili dosya adını ve bölüm başlığını parantez içinde kaynak olarak belirt.
+- **Kaynak Hiyerarşisi:** `kaynak-md/` dizini salt okunur referans alanıdır; bu klasördeki dosyaları silme veya üzerine yazma. Tüm sentez ve makale üretimlerini `content/` dizini altında gerçekleştir.
+- **Atıf Zorunluluğu:** `content/` altına eklediğin her tarihsel veya epigrafik bilgi için `kaynak-md/` içindeki ilgili dosya adını ve bölüm başlığını parantez içinde kaynak olarak belirt.
 - **Bağlantı Formatı:** Kavram ve kentler arası geçişlerde Obsidian uyumlu wikilink (`[[Xanthos]]`, `[[Lukka]]`) sözdizimini kullan.
